@@ -1,35 +1,15 @@
-
-import './index.css'
+import Inputs from './components/Inputs';
 
 function App() {
-
-
   return (
-    <section>
-     <div className="bg-blue-500  p-4">
-       <h3>Quiz setup</h3>
-       <p>Number of questions:</p>
-       <input type='number' />
-       <label htmlFor="options">Category:</label>
-       <select>
-        <option value="">sports</option>
-        <option value="option1">sports</option>
-        <option value="option2">mythology</option>
-        <option value="option3">art</option>
-      </select>
-
-       <label htmlFor="options">Difficulty:</label>
-       <select>
-        <option value="">easy</option>
-        <option value="option1">medium</option>
-        <option value="option2">hard</option>
-      </select>
-      
-
-     </div>
+    <section className="flex justify-center items-center my-8">
+      <div className="flex justify-center flex-col w-1/3 bg-blue-500 h-2/5 p-24">
+        <h1 className="text-3xl text-center my-10">Quiz setup</h1>
+        <Inputs />
+      </div>
     </section>
-  
-  )
+  );
 }
 
-export default App
+export default App;
+

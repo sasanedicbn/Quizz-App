@@ -8,7 +8,6 @@ function App() {
   const [amount, setAmount] = useState(10);
   const [category, setCategory] = useState(21); 
   const [difficulty, setDifficulty] = useState('easy'); 
-  
 
   async function fetchData() {
     try {
@@ -20,22 +19,28 @@ function App() {
       
       let data = await response.json();
       console.log(data); 
-      setQuestions(data)
+      setQuestions(data.results);
       
     } catch (error) {
       console.error(error);
     }
   }
+  {console.log(questions)}
  
   return (
-    <section className="flex justify-center items-center my-12">
-      <div className="flex justify-center flex-col w-1/3 bg-blue-400 h-96 p-24 shadow-lg">
-        <h1 className="text-3xl text-center my-6">Quiz setup</h1>
-        <Inputs setAmount={setAmount} setCategory={setCategory} setDifficulty={setDifficulty} />
-        <StartPlaying onClick={fetchData} />
-        <Questions questions={questions}/>
-      </div>
-    </section>
+    <>
+      {questions.length > 0 ? (
+        <Questions questions={questions} />
+      ) : (
+        <section className="flex justify-center items-center my-12">
+          <div className="flex justify-center flex-col w-1/3 bg-blue-400 h-96 p-24 shadow-lg">
+            <h1 className="text-3xl text-center my-6">Quiz setup</h1>
+            <Inputs setAmount={setAmount} setCategory={setCategory} setDifficulty={setDifficulty} />
+            <StartPlaying onClick={fetchData} />
+          </div>
+        </section>
+      )}
+    </>
   );
 }
 

@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import Inputs from './components/Inputs';
 import StartPlaying from './components/StartPlaying';
 
-
 function App() {
+  const [amount, setAmount] = useState(10);
+  const [category, setCategory] = useState(21); 
+  const [difficulty, setDifficulty] = useState('easy'); 
+  
   async function fetchData() {
     try {
-      const response = await fetch('https://opentdb.com/api.php?amount=15');
+      const response = await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}`); 
       
       if (!response.ok) {
         throw new Error('Network response was not ok');

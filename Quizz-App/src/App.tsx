@@ -20,6 +20,7 @@ function App() {
       
       let data = await response.json();
       console.log(data); 
+      setQuestions(data)
       
     } catch (error) {
       console.error(error);
@@ -32,7 +33,7 @@ function App() {
         <h1 className="text-3xl text-center my-6">Quiz setup</h1>
         <Inputs setAmount={setAmount} setCategory={setCategory} setDifficulty={setDifficulty} />
         <StartPlaying onClick={fetchData} />
-        
+        <Questions questions={questions}/>
       </div>
     </section>
   );

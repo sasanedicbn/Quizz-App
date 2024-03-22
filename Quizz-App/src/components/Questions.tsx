@@ -1,19 +1,21 @@
+import React, { useState } from "react";
 import Question from "./Question";
 
 const Questions = ({ questions }) => {
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+    const handleNextQuestion = () => {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+    };
+
     return (
         <div className="flex justify-center items-center h-screen bg-gray-100">
             <div className="container mx-auto">
-                <ul>
-                    {questions.map((question, index) => (
-                        <li key={index} className="my-4 ">
-                            <Question question={question}/>
-                        </li>
-                    ))}
-                </ul>
+                    <Question question={questions[currentQuestionIndex]} handleNextQuestion={handleNextQuestion} />
             </div>
         </div>
     );
 };
+
 
 export default Questions;

@@ -1,19 +1,16 @@
+import Question from "./Question";
 
 const Questions = ({ questions }) => {
     console.log(questions);
     return (
         <div>
-            {questions.length > 0 ? (
                 <ul>
-                    {questions.results.map((question, index) => (
-                        <li key={index}>
-                            <p>{question.question}</p>
-                        </li>
+                    {questions.map((question, index) => (
+                          <li key={index}>
+                            <Question question={question}/>
+                          </li>
                     ))}
                 </ul>
-            ) : (
-                <p>No questions available.</p>
-            )}
         </div>
     );
 };

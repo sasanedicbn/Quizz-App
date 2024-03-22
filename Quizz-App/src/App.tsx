@@ -25,7 +25,7 @@ function App() {
       console.error(error);
     }
   }
-  {console.log(questions)}
+  // {console.log(questions)}
  
   return (
     <>

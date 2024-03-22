@@ -1,7 +1,7 @@
 const Question = ({question}) => {
     console.log('OVO SU PITANJA', question)
     const answer = [question.correct_answer, ...question.incorrect_answers]
-    
+   console.log(answer)
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -11,12 +11,14 @@ const Question = ({question}) => {
     }
 
     const randomAnswer = shuffleArray(answer)
+    console.log(randomAnswer)
     return(
         <>
           <p>{question.question}?</p>
           <div>
-            <p>{question.correct_answer}</p>
-            <p>{question.incorrect_answers}</p>
+           {randomAnswer.map((answer, index) => (
+            <p key={index}>{answer}</p>
+           ))}  
           </div>
         </>
     )

@@ -1,7 +1,6 @@
 import Question from "./Question";
 
 const Questions = ({ questions }) => {
-    console.log(questions);
     return (
         <div>
                 <ul>

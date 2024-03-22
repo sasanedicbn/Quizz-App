@@ -7,7 +7,6 @@ const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFi
     }
    
     const answer = [question.correct_answer, ...question.incorrect_answers]
-    // console.log(answer)
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -25,7 +24,6 @@ const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFi
         }
         handleNextQuestion()
     }
-    // console.log(randomAnswer)
 
     return (
         <div className="bg-white p-4 md:p-8 rounded shadow-lg max-w-md mx-auto">

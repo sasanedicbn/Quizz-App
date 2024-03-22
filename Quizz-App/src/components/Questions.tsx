@@ -2,7 +2,7 @@ import  { useState, useEffect } from "react";
 import Question from "./Question";
 import Finish from "./Finish";
 
-const Questions = ({ questions, amount }) => {
+const Questions = ({ questions, amount, setQuestions }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
     const [quizFinished, setQuizFinished] = useState(false);
@@ -25,6 +25,7 @@ const Questions = ({ questions, amount }) => {
         setCurrentQuestionIndex(0);
         setCorrectAnswersCount(0);
         setQuizFinished(false);
+        setQuestions([])
     };
 
     return (

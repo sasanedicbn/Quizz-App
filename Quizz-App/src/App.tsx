@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       {questions.length > 0 ? (
-        <Questions questions={questions} amount={amount}/>
+        <Questions questions={questions} amount={amount} setQuestions={setQuestions}/>
       ) : (
         <section className="flex justify-center items-center my-12">
           <div className="flex justify-center flex-col w-1/3 bg-blue-400 h-96 p-24 shadow-lg">

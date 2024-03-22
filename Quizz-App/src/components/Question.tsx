@@ -1,6 +1,6 @@
 import Answers from "./Answers"
 
-const Question = ({ question, handleNextQuestion, currentQuestionIndex }) => {
+const Question = ({ question, handleNextQuestion, currentQuestionIndex, handleCorrectAnswer}) => {
     console.log('OVO SU PITANJA', question)
 
     const answer = [question.correct_answer, ...question.incorrect_answers]
@@ -24,7 +24,7 @@ const Question = ({ question, handleNextQuestion, currentQuestionIndex }) => {
             <div className="mt-4">
                 <div>
                     {randomAnswer.map((answer, index) => (
-                        <p key={index} className="my-2 px-4 py-2 bg-gray-200 rounded-lg cursor-pointer"><Answers answer={answer}/></p>
+                        <p key={index} className="my-2 px-4 py-2 bg-gray-200 rounded-lg cursor-pointer"><Answers question={question.correct_answer} answer={answer}/></p>
                     ))}
                 </div>
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" onClick={handleNextQuestion}>Next question</button>

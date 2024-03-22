@@ -1,6 +1,6 @@
 import Answers from "./Answers"
 
-const Question = ({ question, handleNextQuestion }) => {
+const Question = ({ question, handleNextQuestion, currentQuestionIndex }) => {
     console.log('OVO SU PITANJA', question)
 
     const answer = [question.correct_answer, ...question.incorrect_answers]
@@ -19,7 +19,7 @@ const Question = ({ question, handleNextQuestion }) => {
 
     return (
         <div className="bg-white p-4 md:p-8 rounded shadow-lg max-w-md mx-auto">
-            <p className="text-sm text-right">Correct answers: 0/0</p>
+            <p className="text-sm text-right">Correct answers: 0/{currentQuestionIndex + 1}</p>
             <p className="text-lg font-semibold mt-2 text-center">{question.question}?</p>
             <div className="mt-4">
                 <div>

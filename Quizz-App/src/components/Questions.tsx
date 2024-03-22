@@ -11,7 +11,7 @@ const Questions = ({ questions }) => {
     return (
         <div className="flex justify-center items-center h-screen bg-gray-100">
             <div className="container mx-auto">
-                    <Question question={questions[currentQuestionIndex]} handleNextQuestion={handleNextQuestion} />
+                    <Question question={questions[currentQuestionIndex]} currentQuestionIndex={currentQuestionIndex} handleNextQuestion={handleNextQuestion} />
             </div>
         </div>
     );

@@ -1,8 +1,11 @@
 import Answers from "./Answers"
 
-const Question = ({ question, handleNextQuestion, currentQuestionIndex, handleCorrectAnswer}) => {
+const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFinished}) => {
     console.log('OVO SU PITANJA', question)
-
+    if(!question){
+        setQuizFinished(true)
+    }
+   
     const answer = [question.correct_answer, ...question.incorrect_answers]
     // console.log(answer)
 
@@ -30,7 +33,7 @@ const Question = ({ question, handleNextQuestion, currentQuestionIndex, handleCo
             <div className="mt-4">
                 <div>
                     {randomAnswer.map((answer, index) => (
-                        <p key={index} className="my-2 px-4 py-2 bg-gray-200 rounded-lg cursor-pointer"  onClick={() => handleClickAnswer(answer)}>
+                        <p key={index} className="my-2 px-4 py-2 bg-gray-200 rounded-lg cursor-pointer" onClick={() => handleClickAnswer(answer)}>
                             <Answers  answer={answer}/></p>
                     ))}
                 </div>

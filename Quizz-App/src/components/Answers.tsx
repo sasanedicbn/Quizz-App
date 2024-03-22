@@ -1,5 +1,5 @@
 
-const Answers = ({answer,}) => {
+const Answers = ({answer}) => {
     // const [correctAnswer, setCorrectAnswer] = useState(answer)
 //    console.log(answer)
 //    console.log(question)

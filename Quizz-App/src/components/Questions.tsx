@@ -31,5 +31,3 @@ const Questions = ({ questions }) => {
 export default Questions;
 
 
-
-export default Questions;

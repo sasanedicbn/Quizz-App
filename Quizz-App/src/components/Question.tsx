@@ -15,16 +15,23 @@ const Question = ({ question, handleNextQuestion, currentQuestionIndex, handleCo
     }
 
     const randomAnswer = shuffleArray(answer)
+    
+    const handleClickAnswer = (selectedAnswer) => {
+        if(selectedAnswer === question.correct_answer){
+            handleCorrectAnswer()
+        }
+        handleNextQuestion()
+    }
     // console.log(randomAnswer)
 
     return (
         <div className="bg-white p-4 md:p-8 rounded shadow-lg max-w-md mx-auto">
-            <p className="text-sm text-right">Correct answers: 0/{currentQuestionIndex + 1}</p>
             <p className="text-lg font-semibold mt-2 text-center">{question.question}?</p>
             <div className="mt-4">
                 <div>
                     {randomAnswer.map((answer, index) => (
-                        <p key={index} className="my-2 px-4 py-2 bg-gray-200 rounded-lg cursor-pointer"><Answers question={question.correct_answer} answer={answer}/></p>
+                        <p key={index} className="my-2 px-4 py-2 bg-gray-200 rounded-lg cursor-pointer"  onClick={() => handleClickAnswer(answer)}>
+                            <Answers  answer={answer}/></p>
                     ))}
                 </div>
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" onClick={handleNextQuestion}>Next question</button>

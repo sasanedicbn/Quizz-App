@@ -1,4 +1,4 @@
-const Inputs = ({setAmount,setCategory,setDifficulty}) => {
+const Inputs = ({setAmount,setCategory,setDifficulty}:{setAmount: React.Dispatch<React.SetStateAction<number>>, setCategory: React.Dispatch<React.SetStateAction<number>>, setDifficulty: React.Dispatch<React.SetStateAction<string>></React.SetStateAction> </React.SetStateAction>}) => {
   const handleAmountChange = (event) => {
     setAmount(event.target.value);
   }

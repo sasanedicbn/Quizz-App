@@ -1,10 +1,11 @@
 import  { useState, useEffect } from "react";
 import Question from "./Question";
 import Finish from "./Finish";
-import { Questions } from "../App";
+import { QuestionsData } from "../App";
 
 
-const Questions = ({ questions, amount, setQuestions }:{questions: Questions, amount: number, setQuestions: React.Dispatch<React.SetStateAction<Questions>>} ) => {
+
+const Questions = ({ questions, amount, setQuestions }:{questions: QuestionsData, amount: number, setQuestions: React.Dispatch<React.SetStateAction<QuestionsData>>} ) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
     const [quizFinished, setQuizFinished] = useState(false);

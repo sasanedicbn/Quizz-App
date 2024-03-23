@@ -6,12 +6,13 @@ const Questions = ({ questions, amount, setQuestions }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
     const [quizFinished, setQuizFinished] = useState(false);
+    console.log(questions[0])
 
-    useEffect(() => {
+  
         if (currentQuestionIndex === amount) {
             setQuizFinished(true);
         }
-    }, [currentQuestionIndex, amount]);
+
 
     const handleNextQuestion = () => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);

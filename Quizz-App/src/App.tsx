@@ -18,7 +18,6 @@ function App() {
       }
       
       let data = await response.json();
-      console.log(data); 
       setQuestions(data.results);
       
     } catch (error) {
@@ -35,7 +34,7 @@ function App() {
           <div className="flex justify-center flex-col w-1/3 bg-blue-400 h-96 p-24 shadow-lg">
             <h1 className="text-3xl text-center my-6">Quiz setup</h1>
             <Inputs setAmount={setAmount} setCategory={setCategory} setDifficulty={setDifficulty} />
-            <StartPlaying onClick={fetchData} />
+            <StartPlaying fetchData={fetchData} />
           </div>
         </section>
       )}

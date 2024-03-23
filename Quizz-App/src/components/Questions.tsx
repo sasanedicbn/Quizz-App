@@ -1,17 +1,19 @@
 import  { useState, useEffect } from "react";
 import Question from "./Question";
 import Finish from "./Finish";
+import { Questions } from "../App";
 
-const Questions = ({ questions, amount, setQuestions }) => {
+
+const Questions = ({ questions, amount, setQuestions }:{questions: Questions, amount: number, setQuestions: React.Dispatch<React.SetStateAction<Questions>>} ) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
     const [quizFinished, setQuizFinished] = useState(false);
-    console.log(questions[0])
 
-  
+    useEffect(() => {
         if (currentQuestionIndex === amount) {
             setQuizFinished(true);
         }
+    }, [currentQuestionIndex, amount]);
 
 
     const handleNextQuestion = () => {

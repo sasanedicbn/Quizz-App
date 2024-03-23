@@ -3,11 +3,29 @@ import Inputs from './components/Inputs';
 import StartPlaying from './components/StartPlaying';
 import Questions from './components/Questions';
 
+export type Questions = {
+  category: String,
+  correct_answer: String,
+  incorrect_answers: String[],
+  question: String,
+  type: String,
+}[]
+
+// const questionsInitialState: Questions = [{
+//   category: '',
+//   correct_answer: '',
+//   incorrect_answers: [''],
+//   question: '',
+//   type: '',
+// }]
+
 function App() {
-  const [questions, setQuestions] = useState([]);
+  // type assertion typS
+  const [questions, setQuestions] = useState([] as Questions); 
   const [amount, setAmount] = useState(10);
   const [category, setCategory] = useState(21); 
   const [difficulty, setDifficulty] = useState('easy'); 
+
 
   async function fetchData() {
     try {

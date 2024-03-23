@@ -7,7 +7,8 @@ const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFi
     }
    
     const answer = [question.correct_answer, ...question.incorrect_answers]
-
+   
+    // umjesto ovoga ubaciti na random index tacan odg (splice)
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -16,7 +17,7 @@ const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFi
         return array;
     }
 
-    const randomAnswer = shuffleArray(answer)
+    const randomAnswers = shuffleArray(answer)
     
     const handleClickAnswer = (selectedAnswer) => {
         if(selectedAnswer === question.correct_answer){
@@ -27,10 +28,10 @@ const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFi
 
     return (
         <div className="bg-white p-4 md:p-8 rounded shadow-lg max-w-md mx-auto">
-            <p className="text-lg font-semibold mt-2 text-center">{question.question}?</p>
+            <p dangerouslySetInnerHTML={{__html: question.question}}  className=" text-lg font-semibold mt-2 text-center"></p>
             <div className="mt-4">
                 <div>
-                    {randomAnswer.map((answer, index) => (
+                    {randomAnswers.map((answer, index) => (
                         <p key={index} className="my-2 px-4 py-2 bg-gray-200 rounded-lg cursor-pointer" onClick={() => handleClickAnswer(answer)}>
                             <Answers  answer={answer}/></p>
                     ))}

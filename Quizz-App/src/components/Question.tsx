@@ -1,14 +1,14 @@
+import { Questions } from "../App"
 import Answers from "./Answers"
 
-const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFinished}) => {
+const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFinished}:{question: Questions, setQuizFinished: React.Dispatch<React.SetStateAction<boolean>>}) => {
     console.log('OVO SU PITANJA', question)
     if(!question){
         setQuizFinished(true)
     }
    
     const answer = [question.correct_answer, ...question.incorrect_answers]
-   
-    // umjesto ovoga ubaciti na random index tacan odg (splice)
+
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -17,9 +17,9 @@ const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFi
         return array;
     }
 
-    const randomAnswers = shuffleArray(answer)
+    const randomAnswers:string[] = shuffleArray(answer)
     
-    const handleClickAnswer = (selectedAnswer) => {
+    const handleClickAnswer = (selectedAnswer:string) => {
         if(selectedAnswer === question.correct_answer){
             handleCorrectAnswer()
         }

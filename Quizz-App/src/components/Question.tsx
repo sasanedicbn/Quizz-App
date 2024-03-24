@@ -9,6 +9,7 @@ const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFi
    
     const answer = [question.correct_answer, ...question.incorrect_answers]
 
+    // umjesto ovoga ubaciti na random index tacan odg (splice)
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));

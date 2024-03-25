@@ -29,7 +29,7 @@ const Questions = ({ questions, amount, setQuestions }:{questions: QuestionsData
         setCurrentQuestionIndex(0);
         setCorrectAnswersCount(0);
         setQuizFinished(false);
-        
+        setQuestions([])
     };
 
     return (

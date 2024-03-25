@@ -37,7 +37,10 @@ const Questions = ({ questions, amount, setQuestions }:{questions: QuestionsData
             <div className="container mx-auto">
             {!quizFinished ? (
                     <Question 
-                       
+                        question={questions[currentQuestionIndex]} 
+                        handleNextQuestion={handleNextQuestion}
+                        handleCorrectAnswer={handleCorrectAnswer} 
+                        setQuizFinished={setQuizFinished}
                     />
                 ) : (
                     <Finish 

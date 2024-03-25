@@ -38,7 +38,7 @@ const Questions = ({ questions, amount, setQuestions }:{questions: QuestionsData
             {!quizFinished ? (
                     <Question 
                         question={questions[currentQuestionIndex]} 
-                        handleNextQuestion={handleNextQuestion} 
+                        handleNextQuestion={handleNextQuestion}
                         handleCorrectAnswer={handleCorrectAnswer} 
                         setQuizFinished={setQuizFinished}
                     />

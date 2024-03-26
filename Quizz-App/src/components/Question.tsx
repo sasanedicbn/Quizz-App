@@ -1,7 +1,12 @@
 import { Questions } from "../App"
 import Answers from "./Answers"
-
-const Question = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFinished }: { question: Questions, setQuizFinished: React.Dispatch<React.SetStateAction<boolean>> }) => {
+type props = {
+    question: Questions, 
+    handleNextQuestion: () => void,
+    setQuizFinished: React.Dispatch<React.SetStateAction<boolean>>,
+    handleCorrectAnswer: () => void
+}
+const Question: React.FC<props> = ({ question, handleNextQuestion, handleCorrectAnswer, setQuizFinished }) => {
     console.log('OVO SU PITANJA', question)
     if (!question) {
         setQuizFinished(true)

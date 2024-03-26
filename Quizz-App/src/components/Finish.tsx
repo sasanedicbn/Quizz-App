@@ -1,4 +1,9 @@
-const Finish = ({ totalQuestions, correctAnswersCount, onPlayAgain }) => {
+type functionProps = {
+ totalQuestions: number,
+ correctAnswersCount: number,
+ onPlayAgain: () => void,
+}
+const Finish: React.FC<functionProps> = ({ totalQuestions, correctAnswersCount, onPlayAgain }) => {
     const handlePlayAgain = () => {
         onPlayAgain();
     };

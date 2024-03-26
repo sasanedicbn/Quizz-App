@@ -1,11 +1,15 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Question from "./Question";
 import Finish from "./Finish";
 import { QuestionsData } from "../App";
 
+type Props = {
+    questions: QuestionsData,
+    amount: number,
+    setQuestions: React.Dispatch<React.SetStateAction<QuestionsData>>,
+};
 
-
-const Questions = ({ questions, amount, setQuestions }:{questions: QuestionsData, amount: number, setQuestions: React.Dispatch<React.SetStateAction<QuestionsData>>} ) => {
+const Questions: React.FC<Props> = ({ questions, amount, setQuestions }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
     const [quizFinished, setQuizFinished] = useState(false);
@@ -56,5 +60,3 @@ const Questions = ({ questions, amount, setQuestions }:{questions: QuestionsData
 };
 
 export default Questions;
-
-

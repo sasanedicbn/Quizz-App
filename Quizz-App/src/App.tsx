@@ -24,7 +24,7 @@ function App() {
   // type assertion typS
   const [questions, setQuestions] = useState([] as QuestionsData); 
   const [amount, setAmount] = useState(10);
-  const [category, setCategory] = useState(21); 
+  const [category, setCategory] = useState('21'); 
   const [difficulty, setDifficulty] = useState('easy'); 
 
 

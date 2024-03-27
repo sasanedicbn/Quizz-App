@@ -1,4 +1,4 @@
-export type Question = {
+export type QuestionTY = {
     category: string;
     correct_answer: string;
     incorrect_answers: string[];
@@ -6,5 +6,5 @@ export type Question = {
     type: string;
 }
 
-export type QuestionsData = Question[]
+export type QuestionsData = QuestionTY[]
 

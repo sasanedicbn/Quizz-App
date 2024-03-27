@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Question from "./Question";
 import Finish from "./Finish";
 import { QuestionsData } from "./Types";
 
@@ -40,7 +41,7 @@ const Questions: React.FC<Props> = ({ questions, amount, setQuestions }) => {
         <div className="flex justify-center items-center h-screen bg-gray-100">
             <div className="container mx-auto">
             {!quizFinished ? (
-                    <Question 
+                    <Question
                         question={questions[currentQuestionIndex]} 
                         handleNextQuestion={handleNextQuestion}
                         handleCorrectAnswer={handleCorrectAnswer} 

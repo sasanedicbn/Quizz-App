@@ -1,8 +1,8 @@
 
 import Answers from "./Answers"
-import { Question } from "./Types"
+import { QuestionTY } from "./Types"
 type props = {
-    question: Question, 
+    question: QuestionTY, 
     handleNextQuestion: () => void,
     setQuizFinished: React.Dispatch<React.SetStateAction<boolean>>,
     handleCorrectAnswer: () => void

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Question from "./Question";
 import Finish from "./Finish";
-import { QuestionsData } from "../App";
+import { QuestionsData } from "./Types";
+
 
 type Props = {
     questions: QuestionsData,
@@ -22,11 +22,11 @@ const Questions: React.FC<Props> = ({ questions, amount, setQuestions }) => {
 
 
     const handleNextQuestion = () => {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setCurrentQuestionIndex((currentQuestionIndex) => currentQuestionIndex + 1);
     };
 
     const handleCorrectAnswer = () => {
-        setCorrectAnswersCount(correctAnswersCount + 1);
+        setCorrectAnswersCount((correctAnswersCount) => correctAnswersCount + 1);
     };
 
      const handlePlayAgain = () => {

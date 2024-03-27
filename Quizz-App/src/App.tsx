@@ -2,26 +2,10 @@ import { useState } from 'react';
 import Inputs from './components/Inputs';
 import StartPlaying from './components/StartPlaying';
 import Questions from './components/Questions';
+import { QuestionsData } from './components/Types';
 
-export type QuestionsData = {
-  category: string;
-  correct_answer: string;
-  incorrect_answers: string[];
-  question: string;
-  type: string;
-}[];
-
-
-// const questionsInitialState: Questions = [{
-//   category: '',
-//   correct_answer: '',
-//   incorrect_answers: [''],
-//   question: '',
-//   type: '',
-// }]
 
 function App() {
-  // type assertion typS
   const [questions, setQuestions] = useState([] as QuestionsData); 
   const [amount, setAmount] = useState(10);
   const [category, setCategory] = useState('21'); 
